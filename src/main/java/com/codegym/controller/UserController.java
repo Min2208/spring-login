@@ -12,10 +12,13 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class UserController {
     @GetMapping("/home")
-    public ModelAndView home(){
-        ModelAndView modelAndView = new ModelAndView("home", "login", new User("vuong","123456","Vuong dai ca","vuong@gmail.com",30));
-        return modelAndView;
+    public String home(){
+        return "home";
     }
+//    public ModelAndView home(){
+//        ModelAndView modelAndView = new ModelAndView("home", "login", new User("vuong","123456","Vuong dai ca","vuong@gmail.com",30));
+//        return modelAndView;
+//    }
 
     @PostMapping("/login")
     public ModelAndView login(@ModelAttribute Login login){
